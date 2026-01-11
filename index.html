@@ -1,10 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Benim Yazılım Blogum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV_LOG::[Kullanıcı Adın]</title>
+    <style>
+        /* --- Fütüristik Tema Ayarları --- */
+        :root {
+            --bg-color: #050505; /* Derin siyah arka plan */
+            --text-color: #e0e0e0; /* Açık gri metin */
+            --neon-cyan: #00fff2; /* Neon mavi/turkuaz */
+            --neon-purple: #bd00ff; /* Neon mor */
+            --font-mono: 'Courier New', Courier, monospace; /* Terminal tarzı font */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-mono);
+            line-height: 1.6;
+            /* Hafif bir ızgara (grid) arka plan efekti */
+            background-image: 
+                linear-gradient(rgba(0, 255, 242, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 242, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Ana Kapsayıcı */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header (Üst Kısım) Efektleri */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 2px solid var(--neon-purple);
+            margin-bottom: 40px;
+            /* Yanıp sönme efekti animasyonu */
+            animation: flicker 3s infinite alternate;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+            /* Neon yazı parlaması */
+            color: var(--neon-cyan);
+            text-shadow: 0 0 5px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+        }
+
+        .subtitle {
+            color: var(--neon-purple);
+            font-size: 1.1rem;
+        }
+
+        /* Blog Kartları Tasarımı */
+        .blog-post {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #333;
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            /* Köşeli, teknolojik görünüm için clip-path */
+            clip-path: polygon(
+                0 0, 
+                100% 0, 
+                100% calc(100% - 20px), 
+                calc(100% - 20px) 100%, 
+                0 100%
+            );
+        }
+
+        /* Hover (Üzerine gelince) Efekti */
+        .blog-post:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 255, 242, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .blog-post h2 {
+            margin-top: 0;
+            color: var(--neon-cyan);
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: var(--bg-color);
+            background-color: var(--neon-cyan);
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: var(--neon-purple);
+            color: white;
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #333;
+        }
+
+        /* Basit bir titreme animasyonu */
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                box-shadow: 0 0 4px rgba(0, 255, 242, 0.1), 0 0 10px rgba(0, 255, 242, 0.1);
+            }
+            20%, 24%, 55% {
+                box-shadow: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Merhaba Dünya! Ben bir Yazılım Öğrencisiyim.</h1>
-    <p>Burada öğrendiğim teknolojileri ve projelerimi paylaşacağım.</p>
+
+    <div class="container">
+        <header>
+            <h1>>> SYSTEM_ONLINE // BLOG BAŞLATILIYOR</h1>
+            <p class="subtitle">[ Yazılım Öğrencisinin Seyir Defteri ]</p>
+        </header>
+
+        <main>
+            <article class="blog-post">
+                <h2>GitHub Pages ile Site Nasıl Kurulur?</h2>
+                <span class="blog-meta">Tarih: 2023-10-27 | Kategori: #WebDev</span>
+                <p>Terminali açın, git komutlarını hazırlayın. Bugün kendi sunucumuza ihtiyaç duymadan sitemizi yayına alıyoruz. İlk adım repository oluşturmak...</p>
+                <a href="#" class="read-more">GİRİŞ YAP >></a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Neden Python Öğreniyorum?</h2>
+                <span class="blog-meta">Tarih: 2023-10-25 | Kategori: #Backend</span>
+                <p>Veri bilimi ve yapay zeka alanındaki yükselişi ile Python, bir yazılım öğrencisi için vazgeçilmez bir araç haline geldi. İşte benim yol haritam.</p>
+                <a href="#" class="read-more">GİRİŞ YAP >></a>
+            </article>
+        </main>
+
+        <footer>
+            <p>EOF (End of File) | © 2023 [Senin Adın] | Tarafından Kodlandı</p>
+        </footer>
+    </div>
+
 </body>
 </html>
